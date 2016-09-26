@@ -6,10 +6,52 @@
 
 	<!-- Latest compiled and minified CSS & JS -->
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<style> 
+#heading {
+	font-family: "Brush Script MT", cursive;
+	font-size: 100px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+#question {
+	font-family: "Brush Script MT", cursive;
+	font-size: 50px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color: white;
+}
+#search {
+	font-family: "Palatino Linotype";
+}
+.jumbotron {
+	color: white;
+}
+#foot {
+	font-family: "Palatino Linotype";
+}
+#heading2 {
+	font-family: "Brush Script MT", cursive;
+	font-size: 100px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+#submit {
+	font-family: "Palatino Linotype";
+}
+#questions {
+	font-family: "Palatino Linotype";
+}
+	</style>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script> -->
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery.js"></script>
@@ -18,8 +60,6 @@
 	<!-- Font Awesome Glyphicons -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-		<!-- Chosen -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
 </head>
@@ -188,7 +228,7 @@
 	      </div>
 	      <div class="modal-body">
 	        <h2 id="matchName"></h2>
-	        <img id="matchImg" src="file:///Users/lisavanorden/Documents/RCB_files/week13_files/wk13_hw/friendfinder/assets/images/floya_avatar_pic.jpg" alt="">
+	        <img id="matchImg" src="" alt="">
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -222,13 +262,13 @@
 		  var isValid = true;
 		  $('.form-control').each(function() {
 		    if ( $(this).val() === '' )
-		        isValid = false;
+		        isValid = false; //set back to false;
 		  });
 
 		  $('.chosen-select').each(function() {
 
 		  	if( $(this).val() === "")
-		  		isValid = false
+		  		isValid = false; //set back to false
 		  })
 		  return isValid;
 		}
@@ -252,7 +292,8 @@
 
 	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
 	    		$("#matchName").text(data.name);
-	    		$('#matchImg').attr("src", data.photo);
+	    		console.log(data)
+	    		$('#matchImg').attr("src", data.image);
 		    	// Show the modal with the best match 
 		    	$("#resultsModal").modal('toggle');
 
@@ -272,18 +313,3 @@
 
 </body>
 </html>
-
-<!-- Compatibility should be determined based on the following.
-
-Each user's results should be converted into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
-You will then compare the difference between the user's scores against other users' scores, question by question. You will then add up the differences to calculate the totalDifference.
-Example:
-User 1: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
-User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
-Total Difference: 2 + 1 + 2 = 5
-Remember to use the absolute value of the differences (i.e 5-3 and 3-5 should both be 2).
-The person with the closest match should be the one with the "least" amount of difference.
-Once you've determined the closest match, display the result back to the user in the form of a modal pop-up.
-
-The result should display both t
- -->
