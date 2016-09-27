@@ -87,5 +87,5 @@ app.get('/', function (req, res){
 	res.sendFile(path.join(__dirname, './app/public/home.html'));
 });
 app.use('/', function (req, res){
-	res.sendFile.(path.joihn(__dirname, './app/public/home.html'));
+	res.sendFile(path.joihn(__dirname, './app/public/home.html'));
 })
