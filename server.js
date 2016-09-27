@@ -10,7 +10,7 @@ var friends = require('./app/data/friends.js');
 // This sets up the basic properties for our express server 
 
 var app = express(); // Tells node that we are creating an "express" server
-var PORT = 3000; 
+
 
 // BodyParser makes it easy for our server to interpret data sent to it.
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // LISTENER
 // The below code effectively "starts" our server 
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("App listening on PORT: " + PORT);
 });
 
