@@ -33,11 +33,6 @@ app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
 
-app.get('/', function (req, res){
-	console.log('yo')
-	res.sendFile(path.join(__dirname, './app/public/home.html'));
-});
-
 app.get('/survey.html', function (req, res){
 	console.log('yo')
 	res.sendFile(path.join(__dirname, './app/public/survey.html'));
@@ -87,4 +82,10 @@ app.post('/api/friends', function (req, res){
 		// res.json(greatMatch)
 		console.log(greatMatch);
 });
-
+app.get('/', function (req, res){
+	console.log('yo')
+	res.sendFile(path.join(__dirname, './app/public/home.html'));
+});
+app.use('/', function (req, res){
+	res.sendFile.(path.joihn(__dirname, './app/public/home.html'));
+})
